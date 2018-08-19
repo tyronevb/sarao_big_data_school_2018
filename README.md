@@ -3,8 +3,10 @@
 Resources for the SARAO BIG DATA SCHOOL 2018
 
 ## Projects
+coming soon
 
 ## Shortcuts for projects in IDIA Cloud
+coming soon
 
 ## First step
  After receiving your username and password for the IDIA cloud VM you are welcome to change you password by 
