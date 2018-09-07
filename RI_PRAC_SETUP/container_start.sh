@@ -6,13 +6,14 @@ DOCKER_OPTS="--volume=/etc/group:/etc/group "\
 "-e HOME=${HOME} "\
 "-v ${HOME}:${HOME} "\
 "-v /data:/data "\
-"--net=host "\
 "--workdir=${HOME} "\
 "--shm-size=32g "\
 "--memory=32g "\
 "--cpus=10 "\
-"-d "\
-"-t"
+"-p 9000:9000 "\
+"-p 50100:50100 "\
+"-dt"
 
 docker run ${DOCKER_OPTS} --name ri_prac_instance ri_prac
-docker exec -i -u `id -ur` ri_prac_instance sudo -S /etc/init.d/ssh start
+docker exec -it -u 0 ri_prac_instance /etc/init.d/ssh start
+docker exec -d -u 0 ri_prac_instance jupyterhub --port 9000
